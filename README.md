@@ -55,15 +55,15 @@ val onPrimaryDark = Color(0xFF1F3701)
 > [!NOTE]
 > To reduce modifications required when switching themes, this module generates dark mode and light mode in separate files.
 ```c
-// Dark
-Set(M3Primary, ColorValue("#B1D18A"));
-Set(M3OnPrimary, ColorValue("#1F3701"));
-// ...
-```
-```c
 // Light
 Set(M3Primary, ColorValue("#4C662B"));
 Set(M3OnPrimary, ColorValue("#FFFFFF"));
+// ...
+```
+```c
+// Dark
+Set(M3Primary, ColorValue("#B1D18A"));
+Set(M3OnPrimary, ColorValue("#1F3701"));
 // ...
 ```
 
