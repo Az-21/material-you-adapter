@@ -17,6 +17,9 @@ Adapt Material You (M3) theme files to various languages and technologies
 val primaryLight = Color(0xFF4C662B)
 val onPrimaryLight = Color(0xFFFFFFFF)
 // ...
+val primaryDark = Color(0xFFB1D18A)
+val onPrimaryDark = Color(0xFF1F3701)
+// ...
 ```
 
 ## Typst Adapter
