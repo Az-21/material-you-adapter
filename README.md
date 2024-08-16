@@ -11,11 +11,10 @@ Adapt Material You (M3) theme files to various languages and technologies
 > [!TIP]
 > This script supports multiple theme files. All `.kt` files inside `Input/` folder will be adapted.
 
-## Adapters
-### Typst
+## Typst Adapter
 [Typst](https://github.com/typst/typst) is a markup-based typesetting system.
 
-#### Sample Output
+### Sample Output
 ```typ
 #let m3light = (
   primary: rgb("#4C662B"),
@@ -30,7 +29,7 @@ Adapt Material You (M3) theme files to various languages and technologies
 )
 ```
 
-#### Usage
+### Usage
 ```typ
 #import "color.typ": m3dark, m3light
 
@@ -38,10 +37,10 @@ Adapt Material You (M3) theme files to various languages and technologies
 #box(width: 32pt, height: 32pt, fill: m3light.primary)
 ```
 
-### Power FX | Power Apps
+## Power FX | Power Apps Adapter
 [Power Apps](https://www.microsoft.com/en-us/power-platform/products/power-apps) is a low-code application building tool.
 
-#### Sample Output
+### Sample Output
 > [!NOTE]
 > To reduce modifications required when switching themes, this module generates dark mode and light mode in separate files.
 ```c
@@ -59,5 +58,5 @@ Set(M3PrimaryContainer, ColorValue("#CDEDA3"));
 // ...
 ```
 
-#### Usage
+### Usage
 - Copy paste the variable declarations in the `OnStart` $f x$ parameter of the *App*.
