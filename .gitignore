@@ -161,6 +161,7 @@ cython_debug/
 
 # Kotlin theme files
 *.kt
+*.zip
 
 # Output folder
 Output/
