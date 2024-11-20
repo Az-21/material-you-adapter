@@ -27,7 +27,7 @@ def generate(colors: list[tuple]) -> list[str]:
       lines.append(f'  {formatted_color_name}: str = "#{color_hex}"')
 
   # Optionally initialize
-  lines.append("\n\n# dark = DarkTheme()")
-  lines.append("# light = LightTheme()")
+  lines.append("\n\ndark = DarkTheme()")
+  lines.append("light = LightTheme()")
 
   return lines
