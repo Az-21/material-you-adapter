@@ -71,14 +71,14 @@ Set(M3OnPrimary, ColorValue("#1F3701"));
 ```py
 @dataclass(frozen=True)
 class LightTheme:
-  primary: str = "#8F31B1"
+  primary: str = "#4C662B"
   onPrimary: str = "#FFFFFF"
   # ...
 
 @dataclass(frozen=True)
 class DarkTheme:
-  primary: str = "#8F31B1"
-  onPrimary: str = "#FFFFFF"
+  primary: str = "#B1D18A"
+  onPrimary: str = "#1F3701"
   # ...
 
 dark = DarkTheme()
