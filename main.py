@@ -1,5 +1,6 @@
 import pathlib
 import src.format.power_fx as power_fx
+import src.format.python as python
 import src.format.typst as typst
 import src.parse.theme
 import src.utility
@@ -42,6 +43,11 @@ def parse(kt_theme: pathlib.Path, colors_kt_file_data: str) -> None:
   typst_colors: list[str] = typst.generate(colors)
   save.to_file(typst_colors, "Typst", kt_theme.stem, ".typ")
   print("  ✔️  Typst theme generated")
+
+  # Python
+  python_colors: list[str] = python.generate(colors)
+  save.to_file(python_colors, "Python", kt_theme.stem, ".py")
+  print("  ✔️  Python theme generated")
 
 
 if __name__ == "__main__":
