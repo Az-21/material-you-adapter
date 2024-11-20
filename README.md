@@ -73,3 +73,40 @@ Set(M3OnPrimary, ColorValue("#1F3701"));
 
 ### Usage
 - Copy paste the variable declarations in the `OnStart` $f x$ parameter of the *App*.
+</details>
+
+<details>
+<summary><h2>Python</h2></summary>
+
+### Sample Output
+```py
+@dataclass(frozen=True)
+class LightTheme:
+  primary: str = "#8F31B1"
+  onPrimary: str = "#FFFFFF"
+  # ...
+
+@dataclass(frozen=True)
+class DarkTheme:
+  primary: str = "#8F31B1"
+  onPrimary: str = "#FFFFFF"
+  # ...
+
+dark = DarkTheme()
+light = LightTheme()
+```
+
+### Usage
+```py
+from src.theme.colors import dark as m3
+#                            ^--^ Easily switch theme by changing just one line
+
+print(m3.primary)
+```
+```py
+# Alternatively call both light and dark variants
+import src.theme.colors as m3
+print(m3.dark.primary)
+print(m3.light.primary)
+```
+</details>
