@@ -22,7 +22,10 @@ val onPrimaryDark = Color(0xFF1F3701)
 // ...
 ```
 
-## Typst Adapter
+## Outputs
+<details>
+<summary><h2>Typst</h2></summary>
+
 [Typst](https://github.com/typst/typst) is a markup-based typesetting system.
 
 ### Sample Output
@@ -47,13 +50,14 @@ val onPrimaryDark = Color(0xFF1F3701)
 #box(width: 32pt, height: 32pt, fill: m3dark.primary)
 #box(width: 32pt, height: 32pt, fill: m3light.primary)
 ```
+</details>
 
-## Power FX | Power Apps Adapter
+<details>
+<summary><h2>Power Apps</h2></summary>
+
 [Power Apps](https://www.microsoft.com/en-us/power-platform/products/power-apps) is a low-code application building tool.
 
 ### Sample Output
-> [!NOTE]
-> To reduce modifications required when switching themes, this module generates dark mode and light mode in separate files.
 ```c
 // Light
 Set(M3Primary, ColorValue("#4C662B"));
