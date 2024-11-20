@@ -5,7 +5,7 @@ def generate(colors: list[tuple]) -> list[str]:
   lines: list[str] = []
 
   # Imports
-  lines.append("from dataclasses import dataclass")
+  lines.append("from dataclasses import dataclass\n\n")
 
   #  Light color variable definition
   lines.append("@dataclass(frozen=True)")
@@ -16,7 +16,7 @@ def generate(colors: list[tuple]) -> list[str]:
       lines.append(f'  {formatted_color_name}: str = "#{color_hex}"')
 
   # Spacer
-  lines.append("")
+  lines.append("\n")
 
   # Dark color variable definition
   lines.append("@dataclass(frozen=True)")
