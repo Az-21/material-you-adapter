@@ -1,6 +1,7 @@
 import pathlib
 import src.format.power_fx as power_fx
 import src.format.python as python
+import src.format.tailwind as tailwind
 import src.format.typst as typst
 import src.parse.theme
 import src.utility
@@ -48,6 +49,11 @@ def parse(kt_theme: pathlib.Path, colors_kt_file_data: str) -> None:
   python_colors: list[str] = python.generate(colors)
   save.to_file(python_colors, "Python", kt_theme.stem, ".py")
   print("  ✔️  Python theme generated")
+
+  # TailwindCSS
+  tailwind_colors: list[str] = tailwind.generate(colors)
+  save.to_file(tailwind_colors, "TailwindCSS", kt_theme.stem, ".css")
+  print("  ✔️  TailwindCSS theme generated")
 
 
 if __name__ == "__main__":
