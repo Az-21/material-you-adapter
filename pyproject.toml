@@ -1,0 +1,7 @@
+[project]
+name = "material-you-adapter"
+version = "0.1.0"
+description = "Adapt Material You (M3) theme files to various languages and technologies"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
