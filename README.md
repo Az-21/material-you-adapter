@@ -8,6 +8,12 @@ Adapt Material You (M3) theme files to various languages and technologies
 4. Run `main.py`.
 5. Find generated outputs in `Output/` folder.
 
+> [!IMPORTANT]
+> This project supports [`uv`](https://github.com/astral-sh/uv) package manager. Simply run
+> ```sh
+> uv run ./main.py
+> ```
+
 > [!TIP]
 > This script supports multiple theme files. All `.zip` files inside `Input/` folder will be adapted.
 
