@@ -1,4 +1,7 @@
 import pathlib
+
+from rich.console import Console
+
 import src.format.power_fx as power_fx
 import src.format.python as python
 import src.format.tailwind as tailwind
@@ -8,6 +11,8 @@ import src.utility
 import src.utility.read
 import src.utility.read as read
 import src.utility.save as save
+
+console = Console()
 
 
 def main() -> None:
@@ -23,37 +28,36 @@ def main() -> None:
   color_kt_files = src.utility.read.kt_theme_file_from_zips("Input")
   for zip_file, content in color_kt_files.items():
     zip_path = pathlib.Path("Input") / zip_file
+    console.print(f"\n✨ Working on [bold blue]{zip_file}")
     parse(zip_path, content)
 
 
 def parse(kt_theme: pathlib.Path, colors_kt_file_data: str) -> None:
-  print(f"\n✨ Working on {kt_theme}")
-
   # Parse theme
   colors: list[tuple] = src.parse.theme.from_kt_variable(colors_kt_file_data)
-  print("  ✔️  Kotlin theme file parsed")
+  console.print("\t📑 Kotlin theme parsed successfully")
 
   # Power FX (PowerApps)
   power_fx_dark_colors: list[str] = power_fx.generate(colors, brightness="Dark")
   power_fx_light_colors: list[str] = power_fx.generate(colors, brightness="Light")
   save.to_file(power_fx_dark_colors, "PowerFx", kt_theme.stem + "_Dark", ".txt")
   save.to_file(power_fx_light_colors, "PowerFx", kt_theme.stem + "_Light", ".txt")
-  print("  ✔️  Power FX theme generated")
+  console.print("\t✅ Power FX")
 
   # Typst
   typst_colors: list[str] = typst.generate(colors)
   save.to_file(typst_colors, "Typst", kt_theme.stem, ".typ")
-  print("  ✔️  Typst theme generated")
+  console.print("\t✅ Typst")
 
   # Python
   python_colors: list[str] = python.generate(colors)
   save.to_file(python_colors, "Python", kt_theme.stem, ".py")
-  print("  ✔️  Python theme generated")
+  console.print("\t✅ Python")
 
   # TailwindCSS
   tailwind_colors: list[str] = tailwind.generate(colors)
   save.to_file(tailwind_colors, "TailwindCSS", kt_theme.stem, ".css")
-  print("  ✔️  TailwindCSS theme generated")
+  console.print("\t✅ TailwindCSS")
 
 
 if __name__ == "__main__":
